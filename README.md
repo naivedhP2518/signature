@@ -12,7 +12,7 @@
 
 <br/>
 
-> *"Every signature tells a story — this one animates it."*
+ *"Every signature tells a story — this one animates it."*
 
 </div>
 
@@ -296,12 +296,6 @@ Page Load
 | 🟡 | **Bright Gold** | `#ffd700` | Shimmer highlight peak |
 | 🟡 | **Pale Gold** | `#ffe066` | Shimmer brightest tone |
 | 🟡 | **Dark Gold** | `#b8860b` | Shimmer shadow base |
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
