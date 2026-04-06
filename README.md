@@ -9,6 +9,7 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![SVG](https://img.shields.io/badge/SVG-FFB13B?style=for-the-badge&logo=svg&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/SVG)
 [![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://figma.com)
+[![Live Demo](https://img.shields.io/badge/🔴%20Live%20Demo-View%20Now-brightgreen?style=for-the-badge)](https://naivedhp2518.github.io/signature/)
 
 <br/>
 
@@ -25,6 +26,18 @@ This project showcases a **premium animated signature** that mimics a real pen w
 The signature paths are hand-traced in **Figma** from a real physical signature, exported as **SVG**, then animated using the CSS `stroke-dashoffset` technique — creating a fluid, cinematic draw-on effect with a **golden shimmer glow**, twinkling star particles, and elegant decorative framing.
 
 > 🎨 **Made By:** [Naivedh Patel](https://github.com/naivedhP2518)
+
+---
+
+## 🌐 Live Demo
+
+<div align="center">
+
+### 👉 [**https://naivedhp2518.github.io/signature/**](https://naivedhp2518.github.io/signature/)
+
+> Click the link above to see the animated signature running live in your browser — no installation needed!
+
+</div>
 
 ---
 
