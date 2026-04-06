@@ -1,0 +1,223 @@
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #020818;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+
+  .portfolio-bg {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    background: radial-gradient(ellipse at 30% 40%, #0a1a3e 0%, #020c24 50%, #010610 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Subtle background particles */
+  .stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.15);
+    animation: twinkle var(--d) ease-in-out infinite alternate;
+  }
+
+  @keyframes twinkle {
+    from { opacity: 0.05; transform: scale(0.8); }
+    to { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  /* Ambient glow behind signature */
+  .glow-orb {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(180, 140, 20, 0.07) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: glowPulse 4s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+  }
+
+  /* Thin horizontal dividers */
+  .line-top, .line-bottom {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), rgba(212,175,55,0.6), rgba(212,175,55,0.3), transparent);
+    animation: lineReveal 2.5s ease forwards;
+    transform-origin: center;
+    transform: scaleX(0);
+  }
+  .line-top { top: 18%; animation-delay: 0.3s; }
+  .line-bottom { bottom: 18%; animation-delay: 0.5s; }
+
+  @keyframes lineReveal {
+    to { transform: scaleX(1); }
+  }
+
+  /* Corner ornaments */
+  .corner {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-color: rgba(212,175,55,0.5);
+    border-style: solid;
+    animation: cornerFade 1.5s ease forwards;
+    opacity: 0;
+  }
+  .corner-tl { top: 12%; left: 6%; border-width: 2px 0 0 2px; animation-delay: 0.8s; }
+  .corner-tr { top: 12%; right: 6%; border-width: 2px 2px 0 0; animation-delay: 1s; }
+  .corner-bl { bottom: 12%; left: 6%; border-width: 0 0 2px 2px; animation-delay: 0.8s; }
+  .corner-br { bottom: 12%; right: 6%; border-width: 0 2px 2px 0; animation-delay: 1s; }
+
+  @keyframes cornerFade {
+    to { opacity: 1; }
+  }
+
+  /* SVG signature container */
+  .sig-wrap {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 800px;
+  }
+
+  .sig-svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 18px rgba(212,175,55,0.45)) drop-shadow(0 0 6px rgba(255,220,80,0.3));
+    animation: sigAppear 0.5s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes sigAppear {
+    to { opacity: 1; }
+  }
+
+  /* Each path gets draw animation */
+  .sig-path {
+    fill: none;
+    stroke-linecap: round;
+  }
+
+  /* Gold gradient shimmer effect via stroke color animation */
+  @keyframes shimmer {
+    0%   { stroke: #b8860b; }
+    20%  { stroke: #e8c84a; }
+    40%  { stroke: #ffd700; }
+    60%  { stroke: #ffe066; }
+    80%  { stroke: #d4a017; }
+    100% { stroke: #b8860b; }
+  }
+
+  .path-underline {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    animation: drawPath 1.8s ease forwards, shimmer 3s 2s ease-in-out infinite;
+    stroke: #c9a227;
+    stroke-width: 7;
+  }
+
+  .path-b {
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: drawPath 1.2s 0.3s ease forwards, shimmer 3s 2.2s ease-in-out infinite;
+    stroke: #d4a429;
+    stroke-width: 7;
+  }
+
+  .path-x {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: drawPath 1s 0.8s ease forwards, shimmer 3s 2.4s ease-in-out infinite;
+    stroke: #e8c84a;
+    stroke-width: 7;
+  }
+
+  .path-x2 {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: drawPath 0.7s 1s ease forwards, shimmer 3s 2.4s ease-in-out infinite;
+    stroke: #ffd700;
+    stroke-width: 7;
+  }
+
+  .path-a {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: drawPath 1.1s 1.3s ease forwards, shimmer 3s 2.6s ease-in-out infinite;
+    stroke: #e8c84a;
+    stroke-width: 7;
+  }
+
+  .path-r1 {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: drawPath 1.3s 1.5s ease forwards, shimmer 3s 2.8s ease-in-out infinite;
+    stroke: #d4a429;
+    stroke-width: 7;
+  }
+
+  .path-r2 {
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: drawPath 1.1s 1.8s ease forwards, shimmer 3s 3s ease-in-out infinite;
+    stroke: #c9a227;
+    stroke-width: 7;
+  }
+
+  .path-dot1 {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: drawPath 0.4s 2.1s ease forwards, shimmer 3s 3.2s ease-in-out infinite;
+    stroke: #ffd700;
+    stroke-width: 4;
+  }
+
+  .path-dot2 {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: drawPath 0.4s 2.3s ease forwards, shimmer 3s 3.4s ease-in-out infinite;
+    stroke: #ffd700;
+    stroke-width: 4;
+  }
+
+  @keyframes drawPath {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Premium label */
+  .sig-label {
+    position: absolute;
+    bottom: 14%;
+    right: 8%;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: rgba(212, 175, 55, 0.45);
+    text-transform: uppercase;
+    opacity: 0;
+    animation: labelFade 1s 2.8s forwards;
+  }
+
+  @keyframes labelFade {
+    to { opacity: 1; }
+  }
